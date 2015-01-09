@@ -1,0 +1,2 @@
+MalformedURLException afvangen bij laden van foute image
+EditFrame
