@@ -18,7 +18,6 @@
     <constructor-arg value="Behavioral" />
 </bean>
 
-<<<<<<< HEAD
 <bean id="scope1Bean" class="domain.Scope">
     <constructor-arg value="Class" />
 </bean>
@@ -54,21 +53,5 @@
 		</list>
 	</property>
 </bean>
-=======
-<bean id="scopeBean" class="domain.Scope"></bean>
-
-<bean id="patternBean" class="domain.Pattern"></bean>
-
-
-<bean id="contextBean" class="domain.Context">
-<property name="lists">
-<list>
-<ref bean ="purpose1Bean"/>
-<ref bean ="purpose2Bean"/>
-<ref bean ="purpose3Bean"/>
-</list>
-</property>
-</bean>
->>>>>>> origin/master
 
 </beans>
