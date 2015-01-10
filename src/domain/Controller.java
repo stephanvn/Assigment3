@@ -15,13 +15,6 @@ public class Controller {
 		
 		Context c = (Context)factory.getBean("contextBean");
 		
-		Category p1 = (Category)factory.getBean("purpose1Bean");
-		Category p2 = (Category)factory.getBean("purpose2Bean");
-		Category p3 = (Category)factory.getBean("purpose3Bean");
-		
-		Category s1 = new Scope("Class"); c.addCategory(s1);
-		Category s2 = new Scope("Object"); c.addCategory(s2);
-		
 		new MainFrame(c);		
 	}
 
