@@ -71,14 +71,6 @@ public class SelectFrame extends JFrame {
         		mb2 = new JButton("Show");
         		panel_2.add(mb2);
         		mb2.addActionListener(searchPatternInfo);
-        		
-        		mb3 = new JButton("Edit");
-        		panel_2.add(mb3);
-        		mb3.addActionListener(editPatternInfo);
-        		
-        		mb4 = new JButton("Delete");
-        		panel_2.add(mb4);
-        		mb4.addActionListener(deletePattern);
             }
         }
 
@@ -130,44 +122,6 @@ public class SelectFrame extends JFrame {
 					break;
 				}
 			}			
-		}
-	};
-	
-	ActionListener editPatternInfo = new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			String pattern = (String) mcb3.getSelectedItem();
-			for(Pattern p : con.getPatterns()) {
-				if(p.getName().equals(pattern)) {
-					System.out.println(p.getName()+" clicked");
-					new EditFrame(p,con);
-					dispose();
-					break;
-				}
-			}	
-		}
-	};
-	
-	ActionListener deletePattern = new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			String pattern = (String) mcb3.getSelectedItem();
-			for(Pattern p : con.getPatterns()) {
-				if(p.getName().equals(pattern)) {
-					int n = JOptionPane.showConfirmDialog(null, "Do you really want to delete "+p.getName()+"?", "Delete "+p.getName(), JOptionPane.YES_NO_OPTION);
-					if (n == JOptionPane.YES_OPTION) {
-						try {
-							File file = new File("objecten/"+p.getName()+".obj");
-							file.delete();
-							con.removePattern(p);							
-							JOptionPane.showMessageDialog(null, p.getName()+" succesfully removed.", p.getName()+" deleted", JOptionPane.PLAIN_MESSAGE);
-							dispose();
-						}
-						catch(Exception ex) {
-							JOptionPane.showMessageDialog(null, p.getName()+" can not be removed.", "Error", JOptionPane.ERROR_MESSAGE);
-						}						
-					} 
-					break;
-				}
-			}	
 		}
 	};
 	
