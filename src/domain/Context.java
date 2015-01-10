@@ -26,12 +26,14 @@ public class Context {
 		patterns = new ArrayList<Pattern>();
 	}
 	
-	public void addCategory(Category c) {
-		if(c instanceof Purpose) {
-			purposes.add(c);
-		}
-		else if(c instanceof Scope) {
-			scopes.add(c);
+	public void addCategory(ArrayList<Category> c) {
+		for (Category categories : c){
+			if(categories instanceof Purpose) {
+				purposes.add(categories);
+			}
+			else if(categories instanceof Scope) {
+				scopes.add(categories);
+			}
 		}
 	}
 	
