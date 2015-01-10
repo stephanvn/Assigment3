@@ -20,6 +20,7 @@
 <bean id="purpose3Bean" class="domain.Purpose">
     <constructor-arg value="Behavioral" />
 </bean>
+<<<<<<< HEAD
 
 <bean id="controllerBean" class="domain.Controller">
 <property name="lists">
@@ -29,6 +30,8 @@
 </list>
 </property>
 </bean>
+=======
+>>>>>>> origin/master
 
 <bean id="scopeBean" class="domain.Scope"></bean>
 
