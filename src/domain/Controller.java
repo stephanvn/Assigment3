@@ -13,8 +13,10 @@ public class Controller {
 		Resource resource=new ClassPathResource("applicationContext.xml");
 		BeanFactory factory=new XmlBeanFactory(resource);
 		
+		//Setup domain
 		Context c = (Context)factory.getBean("contextBean");
 		
+		//Setup UI
 		new MainFrame(c);		
 	}
 

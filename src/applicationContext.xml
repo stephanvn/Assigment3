@@ -5,7 +5,6 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-
 <bean id="purpose1Bean" class="domain.Purpose">
     <constructor-arg value="Creational" />
 </bean>
@@ -27,9 +26,80 @@
 </bean>
 
 <bean id="pattern1Bean" class="domain.Pattern">
-    <constructor-arg value="Pattern1" />
+    <constructor-arg value="Factory method" />
+    <constructor-arg value="•The client does not need to know every subclass of objects it must create. It
+		only need one reference to the abstract class/interface and the factory
+		object.
+		•The factory encapsulate the creation of objects. This can be useful if the
+		creation process is very complex." />
+    <constructor-arg value="When a class can't anticipate which kind of class of object it must create.
+		•You want to localize the knowledge of which class gets created.
+		•When you have classes that is derived from the same subclasses, or they
+		may in fact be unrelated classes that just share the same interface. Either
+		way, the methods in these class instances are the same and can be used
+		interchangeably.
+		•When you want to insulate the client from the actual type that is being
+		instantiated." />
+    <constructor-arg value="The Factory pattern provides a way to use an instance as a object factory.
+		The factory can return an instance of one of several possible classes (in a
+		subclass hierarchy), depending on the data provided to it." />
+    <constructor-arg value="http://www.apwebco.com/images/FactoryMethodDetailed.png" />
+    <constructor-arg value="There is no way to change an implementing class without a recompile." />
     <constructor-arg ref="purpose1Bean" />
     <constructor-arg ref="scope1Bean" />
+</bean>
+
+<bean id="pattern2Bean" class="domain.Pattern">
+    <constructor-arg value="Facade" />
+    <constructor-arg value="The main benefit with the Facade pattern is that we can combine very
+		complex method calls and code blocks into a single method that performs a
+		complex and recurring task. Besides making code easier to use and
+		understand, it reduces code dependencies between libraries or packages,
+		making programmers more apt to consideration before writing new code that
+		exposes the inner workings of a library or a package. Also, since the Facade
+		makes a weak coupling between the client code and other packages or
+		libraries it allows us vary the internal components since the client does not
+		call them directly." />
+    <constructor-arg value="The Facade can be used to make a software library easier to use and
+		understand, since the Facade has convenient methods for common tasks. For
+		the same reason, it can make code that uses the library more readable. The
+		pattern can also be used to reduce dependencies of outside code on the
+		inner workings of a library, since most code uses the Facade it allows more
+		flexibility when developing the system. A final usage scenario is where we
+		can wrap several poorly-designed APIs with a single well-designed API. "/>
+    <constructor-arg value="This design pattern provides a unified interface to a set of interfaces in a
+		subsystem. It defines a higher-level interface that makes the subsystem
+		easier to use. A facade is an object that provides a simplified interface to a
+		larger body of code, such as a class library." />
+    <constructor-arg value="http://images.techhive.com/images/idge/imported/article/jvw/2003/05/jw-0530-designpatterns1-100156719-orig.jpg" />
+    <constructor-arg value="One drawback is that we have much less control of what goes on beyond the
+		surface. Also, if some classes require small variations to the implementation
+		of Facade methods, we might end up with a mess." />
+    <constructor-arg ref="purpose2Bean" />
+    <constructor-arg ref="scope2Bean" />
+</bean>
+
+<bean id="pattern3Bean" class="domain.Pattern">
+    <constructor-arg value="Strategy" />
+    <constructor-arg value="•Reduces multiple conditional statements in a client.
+		•Hides complex, algorithmic-specific data from the client.
+		•Provides an alternative to subclassing.
+		•Can be used to hide data that an algorithm uses that clients shouldn't know
+		about." />
+    <constructor-arg value="•When you need to use one of several algorithms dynamically.
+		•When you want to configure a class with one of many related classes
+		(behaviors).
+		•When an algorithm uses data that clients shouldn't know about."/>
+    <constructor-arg value="Use strategy when you need to define a family of algorithms, encapsulate
+		each one, and make them interchangeable. Strategy lets the algorithm vary
+		independently from clients that use it. Related patterns include State,
+		Flyweight, Decorator, Composite." />
+    <constructor-arg value="http://www.dofactory.com/images/diagrams/net/strategy.gif" />
+    <constructor-arg value="•Clients must be aware of different strategies. A client must understand how
+		strategies differ before it can select the appropriate one.
+		•Increases the number of objects in an application." />
+    <constructor-arg ref="purpose3Bean" />
+    <constructor-arg ref="scope2Bean" />
 </bean>
 
 
@@ -50,6 +120,8 @@
 	<property name="patterns">
 		<list>
 			<ref bean ="pattern1Bean"/>
+			<ref bean ="pattern2Bean"/>
+			<ref bean ="pattern3Bean"/>
 		</list>
 	</property>
 </bean>
