@@ -9,11 +9,31 @@
 
 </bean>
 
-<bean id="purposeBean" class="domain.Purpose"></bean>
+<bean id="purpose1Bean" class="domain.Purpose">
+    <constructor-arg value="Creational" />
+</bean>
+
+<bean id="purpose2Bean" class="domain.Purpose">
+    <constructor-arg value="Structural" />
+</bean>
+
+<bean id="purpose3Bean" class="domain.Purpose">
+    <constructor-arg value="Behavioral" />
+</bean>
+
+<bean id="controllerBean" class="domain.Controller">
+<property name="lists">
+<list>
+<ref bean ="purpose1Bean"/>
+<ref bean =""/>
+</list>
+</property>
+</bean>
 
 <bean id="scopeBean" class="domain.Scope"></bean>
 
 <bean id="patternBean" class="domain.Pattern"></bean>
+
 
 
 </beans>
