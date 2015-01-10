@@ -84,8 +84,8 @@ public class Context {
 		return c;
 	}	
 	
-	public void addPattern(Pattern p) {
-		patterns.add(p);
+	public void addPatterns(ArrayList<Pattern> p) {
+		patterns = p;
 	}
 	
 	public void removePattern(Pattern p) {
