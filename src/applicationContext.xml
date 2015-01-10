@@ -28,12 +28,12 @@
 
 <bean id="pattern1Bean" class="domain.Pattern">
     <constructor-arg value="Pattern1" />
-    <constructor-arg ref="Purpose1Bean" />
-    <constructor-arg ref="Scope1Bean" />
+    <constructor-arg ref="purpose1Bean" />
+    <constructor-arg ref="scope1Bean" />
 </bean>
 
 
-<bean id="contextBean" class="domain.Controller">
+<bean id="contextBean" class="domain.Context">
 	<property name="purposes">
 		<list>
 			<ref bean ="purpose1Bean"/>
