@@ -5,9 +5,6 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<bean id="contextBean" class="domain.Context">
-
-</bean>
 
 <bean id="purpose1Bean" class="domain.Purpose">
     <constructor-arg value="Creational" />
@@ -20,23 +17,20 @@
 <bean id="purpose3Bean" class="domain.Purpose">
     <constructor-arg value="Behavioral" />
 </bean>
-<<<<<<< HEAD
-
-<bean id="controllerBean" class="domain.Controller">
-<property name="lists">
-<list>
-<ref bean ="purpose1Bean"/>
-<ref bean =""/>
-</list>
-</property>
-</bean>
-=======
->>>>>>> origin/master
 
 <bean id="scopeBean" class="domain.Scope"></bean>
 
 <bean id="patternBean" class="domain.Pattern"></bean>
 
 
+<bean id="contextBean" class="domain.Context">
+<property name="lists">
+<list>
+<ref bean ="purpose1Bean"/>
+<ref bean ="purpose2Bean"/>
+<ref bean ="purpose3Bean"/>
+</list>
+</property>
+</bean>
 
 </beans>
