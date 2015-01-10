@@ -26,15 +26,12 @@ public class Context {
 		patterns = new ArrayList<Pattern>();
 	}
 	
-	public void addCategory(ArrayList<Category> c) {
-		for (Category categories : c){
-			if(categories instanceof Purpose) {
-				purposes.add(categories);
-			}
-			else if(categories instanceof Scope) {
-				scopes.add(categories);
-			}
-		}
+	public void setPurposes(ArrayList<Category> c) {
+		purposes = c;
+	}
+	
+	public void setScopes(ArrayList<Category> c) {
+		scopes = c;
 	}
 	
 	public String[] getCategoryString(char c) {
@@ -84,7 +81,7 @@ public class Context {
 		return c;
 	}	
 	
-	public void addPatterns(ArrayList<Pattern> p) {
+	public void setPatterns(ArrayList<Pattern> p) {
 		patterns = p;
 	}
 	
